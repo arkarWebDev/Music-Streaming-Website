@@ -5,6 +5,7 @@ import { createPinia } from "pinia";
 import App from "./App.vue";
 import router from "./router";
 import VeeValidatePlugin from "./includes/validate";
+import timeago from "vue-timeago3";
 
 import "./includes/firebase"
 import "./assets/base.css";
@@ -18,7 +19,7 @@ auth.onAuthStateChanged(()=>{
         app.use(createPinia());
         app.use(router);
         app.use(VeeValidatePlugin);
-
+        app.use(timeago)
         app.mount("#app");
     }
 })

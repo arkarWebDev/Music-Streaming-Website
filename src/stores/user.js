@@ -33,8 +33,6 @@ export default defineStore("user", {
       await auth.signOut();
       
       this.userIsLogin = false;
-
-      window.location.reload()
     }
   },
 });
