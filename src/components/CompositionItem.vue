@@ -49,7 +49,11 @@
           <ErrorMessage class="text-red-600" name="genre" />
         </div>
         <div class="flex items-center justify-between">
-          <button type="submit" class="py-1.5 px-3 rounded text-white bg-purple-600">
+          <button
+            type="submit"
+            class="py-1.5 px-3 rounded text-white bg-purple-600"
+            :disabled="commentInProcess"
+          >
             Submit
           </button>
           <button
@@ -79,8 +83,9 @@ export default {
         genre: "alpha_spaces",
       },
       showAlert: false,
-      alert_bg: "",
-      alert_message: "",
+      alert_bg: "bg-purple-600",
+      alert_message: "Updating your song title ...",
+      commentInProcess: false,
     };
   },
   props: {
@@ -111,14 +116,17 @@ export default {
   emits: ["deleteSuccessMsg"],
   methods: {
     async edit(values) {
-      this.alert_message = "Updating in progress ...";
+      this.commentInProcess = true;
       this.showAlert = true;
+      this.alert_bg = "bg-purple-600";
+      this.alert_message = "Updating your song title ...";
 
       try {
         await songCollection.doc(this.song.docID).update(values);
       } catch (error) {
         this.alert_bg = "bg-red-600";
         this.alert_message = "Something went wrong. Try again later";
+        this.commentInProcess = false;
         setTimeout(() => {
           this.showAlert = false;
           this.inEditMode = false;
@@ -128,6 +136,8 @@ export default {
 
       this.alert_bg = "bg-green-600";
       this.alert_message = "Updated successfully.";
+      this.commentInProcess = false;
+
       this.updateUI(this.index, values);
       this.unsavedFlagCheck(false);
 

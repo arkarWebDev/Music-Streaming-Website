@@ -63,6 +63,11 @@ input[type="file"] {
   will-change: background-position;
 }
 
+.slow-spin {
+  -webkit-animation: fa-spin 4s infinite linear;
+  animation: fa-spin 4s infinite linear;
+}
+
 @keyframes progress-bar-stripes {
   0% {
     background-position: 1rem 0;

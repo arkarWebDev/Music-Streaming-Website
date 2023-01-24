@@ -1,10 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import DownloadAppView from '../views/DownloadAppView.vue'
 import ManageView from "../views/ManageView.vue";
 import NotFoundView from "../views/NotFoundView.vue";
 import SongView from "../views/SongView.vue";
-import HelpView from "../views/HelpView.vue";
 
 let routes = [
   {
@@ -13,22 +11,10 @@ let routes = [
     component : HomeView
   },
   {
-    path : "/download",
-    alias : '/download-app',
-    name : "download",
-    component : DownloadAppView
-  },
-  {
     path : "/manage",
     alies : "/manage-music",
     name : "manage" ,
     component : ManageView
-  },
-  {
-    path : "/help-center",
-    alies : "/help",
-    name : "help",
-    component : HelpView
   },
   {
     path : "/play-song/:id",

@@ -22,9 +22,6 @@
           </li>
           <template v-else>
             <li>
-              <router-link class="px-2 text-white" to="/">Home</router-link>
-            </li>
-            <li>
               <router-link class="px-2 text-white" to="/manage">Manage</router-link>
             </li>
             <li>
@@ -32,21 +29,6 @@
             </li>
           </template>
         </ul>
-      </div>
-
-      <div>
-        <router-link
-          class="px-2 border-2 border-white rounded py-1 text-white font-medium"
-          to="/download"
-          exact-active-class="no-active"
-          >Download App</router-link
-        >
-        <router-link
-          class="px-2 bg-white rounded py-1 text-purple-600 border-2 border-white font-medium mx-2"
-          :to="{ name: 'help' }"
-          exact-active-class="no-active"
-          >FAQ</router-link
-        >
       </div>
     </nav>
   </header>
