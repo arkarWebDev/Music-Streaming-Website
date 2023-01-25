@@ -1,0 +1,21 @@
+{
+  "header": {
+    "manage": "Manage",
+    "logout": "Logout",
+    "log_in_out" : "Login / Register"
+  },
+  "home": {
+    "main": "Listen to Great Music!",
+    "intro": "Music gives a soul to the universe, wings to the mind, flight to the imagination and life to everything.",
+    "trending": "Trending Songs"
+  },
+  "song": {
+    "comment_count": "No comments | comment (1) | comments ({count})",
+    "artist" : "artist",
+    "submit" : "Submit",
+    "create_acc" : "Create an account",
+    "unlock" : "and unlock comment feature",
+    "latest_com" : "Latest Comments",
+    "oldest_com" : "Oldest Comments"
+  }
+}

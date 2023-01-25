@@ -8,16 +8,11 @@
       ></div>
       <div class="container mx-auto">
         <div class="text-white main-header-content">
-          <h1 class="font-bold mb-5 text-5xl">Listen to Great Music!</h1>
-          <p class="w-full md:w-8/12 mx-auto">
-            Develop by Htoo Arkar Linn. Host by firebase. Source Code are in my github.
-            <br />
-            <a
-              href="https://github.com/arkarWebDev/Music-Streaming-Website"
-              class="underline"
-              >Click for Source Code</a
-            >
+          <h1 class="font-bold mb-5 text-5xl">{{ $t("home.main") }}</h1>
+          <p class="w-full md:w-4/12 mx-auto">
+            {{ $t("home.intro") }}
           </p>
+          <p class="text-right w-8/12 font-semibold text-xl">Plato</p>
         </div>
       </div>
 
@@ -31,9 +26,11 @@
     <section class="container mx-auto mb-24">
       <div class="bg-white rounded border border-gray-200 relative flex flex-col">
         <div class="px-6 pt-6 pb-5 font-bold border-b border-gray-200">
-          <span class="card-title text-xl">Trending Songs</span>
+          <span class="card-title text-xl">{{ $t("home.trending") }}</span>
           <!-- Icon -->
-          <i class="fa fa-headphones-alt float-right text-purple-600 text-xl"></i>
+          <i
+            class="fa-solid fa-headphones-simple float-right text-purple-600 text-2xl"
+          ></i>
         </div>
         <!-- Playlist -->
         <ol id="playlist">

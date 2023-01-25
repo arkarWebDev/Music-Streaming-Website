@@ -16,18 +16,27 @@
         <ul class="flex flex-row mt-1">
           <!-- Navigation Links -->
           <li v-if="!this.userIsLogin">
-            <a class="px-2 text-white" href="#" @click.prevent="toggleAuth"
-              >Login / Register</a
-            >
+            <a class="px-2 text-white" href="#" @click.prevent="toggleAuth">{{
+              $t("header.log_in_out")
+            }}</a>
           </li>
           <template v-else>
             <li>
-              <router-link class="px-2 text-white" to="/manage">Manage</router-link>
+              <router-link class="px-2 text-white" to="/manage">{{
+                $t("header.manage")
+              }}</router-link>
             </li>
             <li>
-              <a class="px-2 text-white" href="#" @click.prevent="logout">Logout</a>
+              <a class="px-2 text-white" href="#" @click.prevent="logout">{{
+                $t("header.logout")
+              }}</a>
             </li>
           </template>
+          <li>
+            <a href="#" class="px-2 text-white" @click.prevent="changeLoacle">{{
+              showCurrentLocale
+            }}</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -44,11 +53,18 @@ export default {
   computed: {
     ...mapWritableState(useModalStore, ["isOpen"]),
     ...mapWritableState(useUserStore, ["userIsLogin"]),
+
+    showCurrentLocale() {
+      return this.$i18n.locale === "en" ? "Thailand" : "English";
+    },
   },
   methods: {
     ...mapActions(useUserStore, ["logout"]),
     toggleAuth() {
       this.isOpen = !this.isOpen;
+    },
+    changeLoacle() {
+      this.$i18n.locale = this.$i18n.locale === "en" ? "th" : "en";
     },
   },
 };

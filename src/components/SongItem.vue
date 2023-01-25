@@ -9,7 +9,8 @@
         >{{ song.modified_name }}</router-link
       >
       <span class="text-purple-500 text-sm"
-        >artist : <span class="text-gray-500">{{ song.genre }}</span></span
+        >{{ $t("song.artist") }} :
+        <span class="text-gray-500">{{ song.genre }}</span></span
       >
     </div>
 

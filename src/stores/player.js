@@ -38,7 +38,6 @@ export default defineStore("player", {
       }%`;
 
       if (this.sound.playing()) requestAnimationFrame(this.progress);
-      console.log("i am progress function")
     },
     async updateSeekPosition(event) {
       if (!this.sound.playing) return;

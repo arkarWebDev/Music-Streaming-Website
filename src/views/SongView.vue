@@ -21,7 +21,9 @@
         <div class="z-50 text-left ml-8">
           <!-- Song Info -->
 
-          <div class="text-3xl font-bold">{{ song.modified_name }}</div>
+          <div class="text-3xl font-bold">
+            {{ song.modified_name }}
+          </div>
 
           <div>{{ song.genre }}</div>
         </div>
@@ -32,7 +34,9 @@
       <div class="bg-white rounded border border-gray-200 relative flex flex-col">
         <div class="px-6 pt-6 pb-5 font-bold border-b border-gray-200">
           <!-- Comment Count -->
-          <span class="card-title">Comments ({{ song.comments_count }})</span>
+          <span class="card-title">{{
+            $tc("song.comment_count", song.comments_count, { count: song.comments_count })
+          }}</span>
           <i class="fa fa-comments float-right text-purple-600 text-2xl"></i>
         </div>
         <div class="p-6">
@@ -60,7 +64,7 @@
               class="py-1.5 px-3 rounded text-white bg-purple-600 block"
               :disabled="comment_in_process"
             >
-              Submit
+              {{ $t("song.submit") }}
             </button>
           </vee-form>
           <div
@@ -70,17 +74,17 @@
             <span
               class="underline cursor-pointer text-green-300"
               @click.prevent="toggleAuth"
-              >Create an account</span
+              >{{ $t("song.create_acc") }}</span
             >
-            and unlock comment feature.
+            {{ $t("song.unlock") }}
           </div>
           <!-- Sort Comments -->
           <select
             v-model="sortBy"
             class="block mt-4 py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-purple-600 rounded pr-2"
           >
-            <option value="1">Latest Comments</option>
-            <option value="2">Oldest Comments</option>
+            <option value="1">{{ $t("song.latest_com") }}</option>
+            <option value="2">{{ $t("song.oldest_com") }}</option>
           </select>
         </div>
       </div>

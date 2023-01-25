@@ -4,7 +4,7 @@ import "firebase/firestore"
 import "firebase/storage"
 
 const firebaseConfig = {
-  apiKey: "youe_api_key",
+  apiKey: "your_api_key",
   authDomain: "example.firebaseapp.com",
   projectId: "example",
   storageBucket: "example.appspot.com",
@@ -12,6 +12,7 @@ const firebaseConfig = {
   appId: "0:00000000:web:0x0x0x0x0x0x0",
   measurementId: "A-00000000",
 };
+
 
 firebase.initializeApp(firebaseConfig)
 
