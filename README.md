@@ -28,6 +28,7 @@ Still Developing
 ## 🛠 External Library
 - Veelidate
 - Howler
+- i18n
 - Fontawesome
 - Tailwind CSS 
 
